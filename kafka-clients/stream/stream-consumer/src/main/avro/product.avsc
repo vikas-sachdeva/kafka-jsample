@@ -1,0 +1,39 @@
+{
+  "namespace": "kafka.jsample.models",
+  "type": "record",
+  "name": "Product",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "description",
+      "type": [
+        "string",
+         "null"
+      ],
+      "default" : "null"
+    },
+    {
+      "name": "price",
+      "type": "int"
+    },
+    {
+      "name": "category",
+      "type": {
+        "name": "Category",
+        "type": "enum",
+        "symbols": [
+          "Fruites",
+          "Vegetable",
+          "Spice"
+        ]
+      }
+    }
+  ]
+}

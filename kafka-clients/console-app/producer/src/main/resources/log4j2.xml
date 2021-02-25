@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Configuration>
+
+<Configuration status="warn" name="xml_configuration">
+
+	<Appenders>
+		<!-- Write the logs in console -->
+		<Console name="consoleAppender" target="SYSTEM_OUT">
+			<!-- Specify the format of the logs -->
+			<PatternLayout
+				pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %level [%t] [%c] [%M] [%l] - %msg%n" />
+		</Console>
+	</Appenders>
+
+	<Loggers>
+		<Logger name="kafka.jsample" level="info" additivity="false">
+			<appender-ref ref="consoleAppender" />
+		</Logger>
+		<Root level="error" additivity="false">
+			<appender-ref ref="consoleAppender" />
+		</Root>
+	</Loggers>
+</Configuration>

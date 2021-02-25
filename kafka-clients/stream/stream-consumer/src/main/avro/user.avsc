@@ -1,0 +1,72 @@
+{
+  "namespace": "kafka.jsample.models",
+  "type": "record",
+  "name": "User",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "firstName",
+      "type": "string"
+    },
+    {
+      "name": "lastName",
+      "default": "null",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "emailId",
+      "type": {
+        "type": "array",
+        "items": "string"
+      }
+    },
+    {
+      "name": "phone",
+      "type": [
+        "null",
+        {
+          "name": "Phone",
+          "type": "record",
+          "fields": [
+            {
+              "name": "number",
+              "type": "string"
+            }
+          ]
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "address",
+      "type": {
+        "name": "Address",
+        "type": "record",
+        "fields": [
+          {
+            "name": "buildingNo",
+            "type": "string"
+          },
+          {
+            "name": "city",
+            "type": "string"
+          },
+          {
+            "name": "zipCode",
+            "type": "string"
+          },
+          {
+            "name": "country",
+            "type": "string"
+          }
+        ]
+      }
+    }
+  ]
+}
